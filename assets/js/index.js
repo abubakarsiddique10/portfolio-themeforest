@@ -15,7 +15,7 @@ const headerTitle = document.querySelectorAll('.header__title')
 const isTheme = localStorage.getItem('theme');
 const hero = document.getElementById('hero');
 const servicesCard = document.querySelectorAll('.services__card');
-const testimonialCard = document.querySelectorAll('.testimonial__card');
+/* const testimonialCard = document.querySelectorAll('.testimonial__card'); */
 const priceCard = document.querySelectorAll('.price__card');
 const blogCard = document.querySelectorAll('.blog__card');
 const contactLeft = document.querySelector('.contact__left');
@@ -227,12 +227,14 @@ portfolioMenu.addEventListener('click', (e) => {
 // slider draging
 const testimonialBody = document.querySelector('.testimonial__body');
 const dotButtons = document.querySelectorAll('.testimonial__dots button');
+const leftArrow = document.querySelector('.left__arrow');
+const rightRrrow = document.querySelector('.right__arrow');
 let isdragging = false;
 testimonialBody.addEventListener('mousemove', (e) => {
     if (!isdragging) return
     testimonialBody.scrollLeft = testimonialBody.scrollLeft - e.movementX;
 
-    if (testimonialBody.scrollLeft < 396) {
+    /* if (testimonialBody.scrollLeft < 396) {
         console.log(testimonialBody.scrollLeft)
         document.querySelector('.testimonial__dots .dot__active').classList.remove('dot__active');
         dotButtons[0].classList.add('dot__active');
@@ -254,15 +256,50 @@ testimonialBody.addEventListener('mousemove', (e) => {
     else if (testimonialBody.scrollLeft >= 396 * 4 && testimonialBody.scrollLeft < 396 * 5) {
         document.querySelector('.testimonial__dots .dot__active').classList.remove('dot__active');
         dotButtons[4].classList.add('dot__active');
-    }
+    } */
 
 })
 testimonialBody.addEventListener('mousedown', () => isdragging = true);
 testimonialBody.addEventListener('mouseup', () => isdragging = false);
 testimonialBody.addEventListener('mouseleave', () => isdragging = false);
 
-// slider click dot
+const testimonialCard = document.querySelector('.testimonial__card');
+const testimonialArrows = document.querySelectorAll('.testimonial__arrow button');
 
+leftArrow.addEventListener('click', () => {
+    testimonialBody.style.scrollBehavior = "smooth";
+    const scrollLeft = testimonialBody.scrollLeft -= testimonialCard.offsetWidth + 20;
+    testimonialBody.style.scrollBehavior = "auto";
+    if (scrollLeft == 0) {
+        leftArrow.style.opacity = 0.1;
+        leftArrow.style.pointerEvents = "none"
+    }
+    if (scrollLeft > 0) {
+        rightRrrow.style.opacity = 1;
+        rightRrrow.style.pointerEvents = "auto"
+    }
+    console.log('gello')
+
+})
+rightRrrow.addEventListener('click', () => {
+    testimonialBody.style.scrollBehavior = "smooth";
+    const maxScrollableWidth = testimonialBody.scrollWidth - testimonialBody.clientWidth;
+    const scrollLeft = testimonialBody.scrollLeft += testimonialCard.offsetWidth + 20;
+    testimonialBody.style.scrollBehavior = "auto";
+    if (scrollLeft > 0) {
+        leftArrow.style.opacity = 1;
+        leftArrow.style.pointerEvents = "auto"
+    }
+    if (scrollLeft == maxScrollableWidth) {
+        rightRrrow.style.opacity = 0.1;
+        rightRrrow.style.pointerEvents = "none"
+    }
+    console.log('hello')
+
+})
+
+// slider click dot
+/* console.log(dotButtons)
 dotButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
         document.querySelector('.testimonial__dots .dot__active').classList.remove('dot__active');
@@ -271,7 +308,7 @@ dotButtons.forEach((button, index) => {
         button.classList.add('dot__active');
         testimonialBody.style.scrollBehavior = "auto";
     })
-})
+}) */
 /*=========================
     Testimonial Slide End
 ========================== */

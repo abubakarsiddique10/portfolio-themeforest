@@ -510,6 +510,34 @@ footer,section:not(#banner) {
 /*=========================
     TESTIMONIAL STYLE START 
 ==========================*/
+.testimonial__area {
+    position: relative;
+}
+.testimonial__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.testimonial__arrow button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: red;
+    border: 1px solid var(--color-border-1);
+    
+}
+.testimonial__arrow .left__arrow {
+    margin-left: -16px;
+    opacity: 0.1;
+    pointer-events: none
+}
+.testimonial__arrow .right__arrow {
+    margin-right: -16px;
+}
 .testimonial__body {
     max-width: 1168px;
     border-radius: 6px;
@@ -531,13 +559,20 @@ footer,section:not(#banner) {
     flex-shrink: 0;
     user-select: none;
     cursor: grab;
-    /* opacity: 0.133333; */
+    height:fit-content;
+    flex-grow: 1;
+   /*  opacity: 0.133333; */
     /* opacity: 0.233333; */
     /* transform: translate3d(0px, 0px, 0px); */;
+}
+.testimonial__card:nth-child(1) {
+
+    /* transform: scale(1.05) */
 }
 .testimonial__card:nth-child(2) {
     opacity: 1;
     /* transform: scale(1.05) */
+    flex-grow: 2;
 }
 
 .testimonial__card .card__header {
@@ -606,6 +641,8 @@ footer,section:not(#banner) {
     background: var(--color-primary) !important;
     transition: all 0.5s ease;
 }
+
+
 /*=========================
     TESTIMONIAL STYLE END 
 ==========================*/
@@ -943,8 +980,14 @@ footer,section:not(#banner) {
     .banner__left {
         margin-bottom: 100px;
     }
+    .testimonial__card {
+        width: calc(960px / 2);
+    }
 }
 @media (max-width: 768px) {
+    .testimonial__card {
+        width: 100%;
+    }
     .banner__right img {
         border: none;
     }
