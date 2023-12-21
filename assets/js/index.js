@@ -229,10 +229,24 @@ const testimonialBody = document.querySelector('.testimonial__body');
 const dotButtons = document.querySelectorAll('.testimonial__dots button');
 const leftArrow = document.querySelector('.left__arrow');
 const rightRrrow = document.querySelector('.right__arrow');
+
 let isdragging = false;
 testimonialBody.addEventListener('mousemove', (e) => {
-    if (!isdragging) return
-    testimonialBody.scrollLeft = testimonialBody.scrollLeft - e.movementX;
+    if (!isdragging) return;
+    const scrollLeft = testimonialBody.scrollLeft = testimonialBody.scrollLeft - e.movementX;
+    const maxScrollableWidth = testimonialBody.scrollWidth - testimonialBody.clientWidth;
+    console.log(scrollLeft)
+
+    if (scrollLeft <= 0) {
+        leftArrow.disabled = true
+    }
+    if (scrollLeft > 0) {
+        leftArrow.disabled = false
+        rightRrrow.disabled = false
+    }
+    if (scrollLeft >= maxScrollableWidth) {
+        rightRrrow.disabled = true
+    }
 
     /* if (testimonialBody.scrollLeft < 396) {
         console.log(testimonialBody.scrollLeft)
@@ -264,38 +278,32 @@ testimonialBody.addEventListener('mouseup', () => isdragging = false);
 testimonialBody.addEventListener('mouseleave', () => isdragging = false);
 
 const testimonialCard = document.querySelector('.testimonial__card');
-const testimonialArrows = document.querySelectorAll('.testimonial__arrow button');
+
 
 leftArrow.addEventListener('click', () => {
     testimonialBody.style.scrollBehavior = "smooth";
-    const scrollLeft = testimonialBody.scrollLeft -= testimonialCard.offsetWidth + 20;
+    const scrollLeft = testimonialBody.scrollLeft -= testimonialCard.offsetWidth + 24;
     testimonialBody.style.scrollBehavior = "auto";
-    if (scrollLeft == 0) {
-        leftArrow.style.opacity = 0.1;
-        leftArrow.style.pointerEvents = "none"
+    console.log("hello left")
+    if (scrollLeft <= 0) {
+        leftArrow.disabled = true
     }
     if (scrollLeft > 0) {
-        rightRrrow.style.opacity = 1;
-        rightRrrow.style.pointerEvents = "auto"
+        rightRrrow.disabled = false
     }
-    console.log('gello')
-
 })
 rightRrrow.addEventListener('click', () => {
     testimonialBody.style.scrollBehavior = "smooth";
     const maxScrollableWidth = testimonialBody.scrollWidth - testimonialBody.clientWidth;
-    const scrollLeft = testimonialBody.scrollLeft += testimonialCard.offsetWidth + 20;
+    const scrollLeft = testimonialBody.scrollLeft += testimonialCard.offsetWidth + 24;
+    console.log("hello right")
     testimonialBody.style.scrollBehavior = "auto";
     if (scrollLeft > 0) {
-        leftArrow.style.opacity = 1;
-        leftArrow.style.pointerEvents = "auto"
+        leftArrow.disabled = false
     }
-    if (scrollLeft == maxScrollableWidth) {
-        rightRrrow.style.opacity = 0.1;
-        rightRrrow.style.pointerEvents = "none"
+    if (scrollLeft >= maxScrollableWidth) {
+        rightRrrow.disabled = true
     }
-    console.log('hello')
-
 })
 
 // slider click dot
