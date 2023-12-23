@@ -229,7 +229,6 @@ footer,section:not(#banner) {
     letter-spacing: 1.4;
     line-height: 20px;
     margin-bottom: 10px;
-    text-align: center;
     text-transform: uppercase;
 }
 .read_more_btn {
@@ -357,7 +356,6 @@ footer,section:not(#banner) {
     border: 1.5px solid var(--color-border-1);
     border-radius: 6px;
 }
-
 /*=========================
     BANNER STYLE END 
 ==========================*/
@@ -429,6 +427,7 @@ footer,section:not(#banner) {
     background: white;
     justify-content: center;
     visibility: hidden;
+    z-index: 1;
 }
 .services__modal_content {
     position: relative;
@@ -465,7 +464,6 @@ footer,section:not(#banner) {
     font-size: 24px;
     color: var(--color-primary)
 }
-
 .services__modal_thumb {
     width: 100%;
     max-height: 350px;
@@ -499,10 +497,49 @@ footer,section:not(#banner) {
 .services__modal_btn:hover i{
     color: #1E3050;
 }
+/*=========================
+    SERVICES STYLE END 
+==========================*/
 
 
 /*=========================
-    SERVICES STYLE END 
+    PORTFOLIO STYLE START 
+==========================*/
+.portfolio__wrappper {
+    border: 1px solid var(--color-border-1);
+    background: rgb(248 250 252);
+}
+ .portfolio__wrappper img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+    background: #e8e8e8;
+}
+
+.portfolio__menu .menu__item {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    line-height: 22px;
+    text-transform: capitalize;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+}
+.portfolio__content .portfolio__img {
+   width: 100%;
+   height: 100%;
+   transition: all 0.5s ease;
+}
+.portfolio__item:hover .portfolio__img {
+    transform: scale(1.04);
+}
+.portfolio__menu .active {
+    color: var(--color-primary, #FFB400);
+}
+/*=========================
+    PORTFOLIO STYLE START 
 ==========================*/
 
 
@@ -510,40 +547,36 @@ footer,section:not(#banner) {
 /*=========================
     TESTIMONIAL STYLE START 
 ==========================*/
+.testimonial__header {
+    display: flex;
+    justify-content: space-between;
+}
+.testimonial__header .header__title {
+    text-align: left;
+}
+.testimonial__header .header__subtitle {
+    text-align: left
+}
 .testimonial__area {
-    position: relative;
     max-width: 1170px;
 }
-/* .testimonial__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.testimonial__arrow {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-} */
+    align-items: end;
+    gap: 12px;
+}
 .testimonial__arrow button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--color-white-100);
     border: 1px solid var(--color-border-1);
 }
-.testimonial__arrow .left__arrow {
-    left: -16px;
-}
-.testimonial__arrow .right__arrow {
-    right: -16px
-}
 .left__arrow, .right__arrow i {
-    font-size: 15px;
+    font-size: 18px;
 }
 .testimonial__body {
     max-width: 100%;
@@ -551,9 +584,8 @@ footer,section:not(#banner) {
     display: flex;
     gap: 24px;
     overflow-x: scroll;
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 }
-
 .testimonial__body::-webkit-scrollbar {
     display: none;
 }
@@ -565,22 +597,10 @@ footer,section:not(#banner) {
     width: calc(1122px / 3); 
     flex-shrink: 0;
     user-select: none;
+    cursor: pointer;
     height:fit-content;
     flex-grow: 1;
-   /*  opacity: 0.133333; */
-    /* opacity: 0.233333; */
-    /* transform: translate3d(0px, 0px, 0px); */;
 }
-.testimonial__card:nth-child(1) {
-
-    /* transform: scale(1.05) */
-}
-.testimonial__card:nth-child(2) {
-    opacity: 1;
-    /* transform: scale(1.05) */
-    flex-grow: 2;
-}
-
 .testimonial__card .card__header {
     margin-bottom: 18px;
 }
@@ -630,79 +650,8 @@ footer,section:not(#banner) {
     line-height: var(var(--line-height-base));
     text-transform: capitalize;
 }
-
-.testimonial__dots {
-    margin-top: 35px;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
-.testimonial__dots button {
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: #8080803b;
-}
-.dot__active {
-    background: var(--color-primary) !important;
-    transition: all 0.5s ease;
-}
-
-
 /*=========================
     TESTIMONIAL STYLE END 
-==========================*/
-
-
-
-/*=========================
-    PORTFOLIO STYLE START 
-==========================*/
-.portfolio__wrappper {
-    border: 1px solid var(--color-border-1);
-    background: rgb(248 250 252);
-}
- .portfolio__wrappper img {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    display: none;
-    cursor: pointer;
-    background: #e8e8e8;
-}
-.portfolio__menu {
-    /* display: flex;
-    gap: 20px;
-    padding:15px 20px;
-    margin-bottom: 0; */
-}
-.portfolio__menu .menu__item {
-    font-size: var(--font-size-lg);
-    font-weight: 500;
-    line-height: 22px;
-    text-transform: capitalize;
-    cursor: pointer;
-    white-space: nowrap;
-    user-select: none;
-}
-.portfolio__content {
-  /*   display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px; */
-}
-.portfolio__content .portfolio__img {
-   width: 100%;
-   height: 100%;
-   transition: all 0.5s ease;
-}
-.portfolio__item:hover .portfolio__img {
-    transform: scale(1.04);
-}
-.portfolio__menu .active {
-    color: var(--color-primary, #FFB400);
-}
-/*=========================
-    PORTFOLIO STYLE START 
 ==========================*/
 
 
@@ -739,21 +688,9 @@ footer,section:not(#banner) {
    margin-bottom: 10px;
    font-size: 16px;
 }
-.blog .blog__tag {
-    background: #2467EC;
-    color: #FFFFFF;
-    border-radius: 3px;
-    padding: 3px 10px;
-    font-size: 12px;
-    top: 15px;
-    left: 15px;
-    font-weight: 500;
-    text-transform: capitalize;
-}
 .blog__meta {
     margin-top: 15px;
 }
-
 /* Blog modal */
 .blog__modal {
     position: fixed;
@@ -775,9 +712,6 @@ footer,section:not(#banner) {
     overflow-y: auto;
     background: #FFFFFF;
 }
-/* .modal__content::-webkit-scrollbar {
-    display: none;
-} */
 .modal__content::-webkit-scrollbar {
     width: 2px;
 }
@@ -787,7 +721,6 @@ footer,section:not(#banner) {
 .modal__content::-webkit-scrollbar-thumb {
     background: white; 
 }
- 
 .modal__body {
     padding: 32px 64px;
     border: 1px solid var(--color-border-1);
@@ -800,8 +733,6 @@ footer,section:not(#banner) {
 .modal__thumb {
     width: 100%;
     max-height: 350px;
-    /* padding-top: 16px; */
-    /* background: #e8e8e8; */
 }
 .modal__thumb img {
     width: 100%;
@@ -832,19 +763,15 @@ footer,section:not(#banner) {
 .modal__btn:hover i{
     color: #1E3050;
 }
-
 /*=========================
     BLOG STYLE START 
 ==========================*/
 
 
+
 /*=========================
     CONTACT STYLE START 
 ==========================*/
-.contact__body {
-    /* display: flex;
-    gap: 20px; */
-}
 .contact__left {
     border: 1px solid var(--color-border-1);
 }
@@ -938,10 +865,11 @@ footer,section:not(#banner) {
     CONTACT STYLE END 
 ==========================*/
 
+
+
 /*=========================
     FOOTER STYLE START 
 ==========================*/
-
 .footer__header {
     text-align: center;
     margin-bottom: 10px;
@@ -970,112 +898,16 @@ footer,section:not(#banner) {
 ==========================*/
 
 
-
-/*=========================
-    MEDIA QUERIES START 
-==========================*/
-@media (max-width: 992px) {
-    #header {
-        background: #FFFFFF
-    }
-    .banner {
-        height: auto;
-        padding-top: 100px;
-        padding-bottom: 0;
-    }
-    .banner__left {
-        margin-bottom: 100px;
-    }
-    .testimonial__body {
-        max-width: 940px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .testimonial__card {
-        width: calc(960px / 2);
-        cursor: grab
-    }
-}
-@media (max-width: 768px) {
-    .testimonial__card {
-        width: 100%;
-    }
-    .banner__right img {
-        border: none;
-    }
-    .portfolio__wrappper {
-        position: relative;
-        gap: 10px;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .portfolio__content {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .portfolio__menu {
-        max-width: 100%;
-        overflow-x: scroll;
-    }
-    .portfolio__wrappper::before {
-        left: 0px;
-        position: absolute;
-        content: "";
-        width: 25px;
-        height: 52px;
-        border-radius: 4px;
-        display: inline-block;
-        background: linear-gradient(90deg, var(--colorBefore), 80%, transparent);
-    }
-    .portfolio__wrappper::after {
-        right: 0;
-        position: absolute;
-        content: "";
-        width: 25px;
-        height: 52px;
-        border-radius: 4px;
-        display: inline-block;
-        background: linear-gradient(-90deg, var(--colorAfter), 80%, transparent);
-    }
-    .portfolio__menu::-webkit-scrollbar {
-        display: none;
-    }
-    .portfolio__menu .menu__item {
-        user-select: none;
-        cursor: grab;
-    }
-    .portfolio__wrappper img {
-        display: block;
-    }
-    .price__body {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .blog__body {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .contact__right, .contact__left {
-        border: none;
-    }
-    .hero__title {
-        font-size: 32px;
-        line-height:40px;
-    }
-    .modal__title  {
-        font-size: 30px;
-        line-height: 37.5px;
-    }
+body {
+   /*  opacity: 1; 
+    background-color: rgb(13, 18, 36);
+    color: rgb(211, 216, 232);
     
+    --tw-bg-opacity: 1;
+    background-color: rgb(13 18 36/var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(211 216 232/var(--tw-text-opacity)); */
 }
-@media (max-width: 576px) {
-    .modal__body {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-}
-/*=========================
-    MEDIA QUERIES END 
-==========================*/
-
 
 
 

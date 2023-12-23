@@ -1,0 +1,96 @@
+
+@media (max-width: 992px) {
+    #header {
+        background: #FFFFFF
+    }
+    .banner {
+        height: auto;
+        padding-top: 100px;
+        padding-bottom: 0;
+    }
+    .banner__left {
+        margin-bottom: 100px;
+    }
+    .testimonial__card {
+        width: calc(960px / 2);
+    }
+}
+@media (max-width: 768px) {
+    .testimonial__card {
+        width: 100%;
+    }
+    .banner__right img {
+        border: none;
+    }
+    .portfolio__wrappper {
+        position: relative;
+        gap: 10px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .portfolio__content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .portfolio__menu {
+        max-width: 100%;
+        overflow-x: scroll;
+    }
+    .portfolio__wrappper::before {
+        left: 0px;
+        position: absolute;
+        content: "";
+        width: 25px;
+        height: 52px;
+        border-radius: 4px;
+        display: inline-block;
+        background: linear-gradient(90deg, var(--colorBefore), 80%, transparent);
+    }
+    .portfolio__wrappper::after {
+        right: 0;
+        position: absolute;
+        content: "";
+        width: 25px;
+        height: 52px;
+        border-radius: 4px;
+        display: inline-block;
+        background: linear-gradient(-90deg, var(--colorAfter), 80%, transparent);
+    }
+    .portfolio__menu::-webkit-scrollbar {
+        display: none;
+    }
+    .portfolio__menu .menu__item {
+        user-select: none;
+        cursor: grab;
+    }
+    .portfolio__wrappper img {
+        display: block;
+    }
+    .price__body {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .blog__body {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .contact__right, .contact__left {
+        border: none;
+    }
+    .hero__title {
+        font-size: 32px;
+        line-height:40px;
+    }
+    .modal__title  {
+        font-size: 30px;
+        line-height: 37.5px;
+    }
+    
+}
+@media (max-width: 576px) {
+    .modal__body {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+/*=========================
+    MEDIA QUERIES END 
+==========================*/

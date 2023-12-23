@@ -176,7 +176,7 @@ portfolioMenu.addEventListener('mousedown', () => isdragging = true)
 portfolioMenu.addEventListener('mouseup', () => isdragging = false)
 portfolioMenu.addEventListener('mousemove', (e) => {
     if (!isdragging) return
-    portfolioMenu.scrollLeft = portfolioMenu.scrollLeft - e.movementX
+    portfolioMenu.scrollLeft = portfolioMenu.scrollLeft - e.movementX;
 })
 // this code for slide shadow
 const slideShow = () => {
@@ -224,99 +224,38 @@ portfolioMenu.addEventListener('click', (e) => {
 /*=========================
     Testimonial Slide Start
 ==========================*/
-// slider draging
 const testimonialBody = document.querySelector('.testimonial__body');
 const dotButtons = document.querySelectorAll('.testimonial__dots button');
 const leftArrow = document.querySelector('.left__arrow');
 const rightRrrow = document.querySelector('.right__arrow');
-
+const testimonialCard = document.querySelector('.testimonial__card');
 let isdragging = false;
+
+testimonialBody.addEventListener('scroll', () => {
+    const testimonialScrollLeft = testimonialBody.scrollLeft
+    const maxScrollableWidth = testimonialBody.scrollWidth - testimonialBody.clientWidth;
+    leftArrow.disabled = testimonialScrollLeft > 0 ? false : true
+    rightRrrow.disabled = testimonialScrollLeft == maxScrollableWidth ? true : false
+})
+
+// slider draging
 testimonialBody.addEventListener('mousemove', (e) => {
     if (!isdragging) return;
-    const scrollLeft = testimonialBody.scrollLeft = testimonialBody.scrollLeft - e.movementX;
-    const maxScrollableWidth = testimonialBody.scrollWidth - testimonialBody.clientWidth;
-    console.log(scrollLeft)
-
-    if (scrollLeft <= 0) {
-        leftArrow.disabled = true
-    }
-    if (scrollLeft > 0) {
-        leftArrow.disabled = false
-        rightRrrow.disabled = false
-    }
-    if (scrollLeft >= maxScrollableWidth) {
-        rightRrrow.disabled = true
-    }
-
-    /* if (testimonialBody.scrollLeft < 396) {
-        console.log(testimonialBody.scrollLeft)
-        document.querySelector('.testimonial__dots .dot__active').classList.remove('dot__active');
-        dotButtons[0].classList.add('dot__active');
-    }
-    if (testimonialBody.scrollLeft >= 396 && testimonialBody.scrollLeft < 396 * 2) {
-        console.log(testimonialBody.scrollLeft)
-        document.querySelector('.testimonial__dots .dot__active').classList.remove('dot__active');
-        dotButtons[1].classList.add('dot__active');
-    }
-    else if (testimonialBody.scrollLeft >= 396 * 2 && testimonialBody.scrollLeft < 396 * 3) {
-        console.log(testimonialBody.scrollLeft)
-        document.querySelector('.testimonial__dots .dot__active').classList.remove('dot__active');
-        dotButtons[2].classList.add('dot__active');
-    }
-    else if (testimonialBody.scrollLeft >= 396 * 3 && testimonialBody.scrollLeft < 396 * 4) {
-        document.querySelector('.testimonial__dots .dot__active').classList.remove('dot__active');
-        dotButtons[3].classList.add('dot__active');
-    }
-    else if (testimonialBody.scrollLeft >= 396 * 4 && testimonialBody.scrollLeft < 396 * 5) {
-        document.querySelector('.testimonial__dots .dot__active').classList.remove('dot__active');
-        dotButtons[4].classList.add('dot__active');
-    } */
-
+    testimonialBody.style.scrollBehavior = "auto";
+    testimonialBody.scrollLeft = testimonialBody.scrollLeft - e.movementX;
+    testimonialBody.style.scrollBehavior = "smooth";
 })
 testimonialBody.addEventListener('mousedown', () => isdragging = true);
 testimonialBody.addEventListener('mouseup', () => isdragging = false);
 testimonialBody.addEventListener('mouseleave', () => isdragging = false);
 
-const testimonialCard = document.querySelector('.testimonial__card');
-
-
+// slider click
 leftArrow.addEventListener('click', () => {
-    testimonialBody.style.scrollBehavior = "smooth";
-    const scrollLeft = testimonialBody.scrollLeft -= testimonialCard.offsetWidth + 24;
-    testimonialBody.style.scrollBehavior = "auto";
-    console.log("hello left")
-    if (scrollLeft <= 0) {
-        leftArrow.disabled = true
-    }
-    if (scrollLeft > 0) {
-        rightRrrow.disabled = false
-    }
+    testimonialBody.scrollLeft -= testimonialCard.offsetWidth + 24;
 })
 rightRrrow.addEventListener('click', () => {
-    testimonialBody.style.scrollBehavior = "smooth";
-    const maxScrollableWidth = testimonialBody.scrollWidth - testimonialBody.clientWidth;
-    const scrollLeft = testimonialBody.scrollLeft += testimonialCard.offsetWidth + 24;
-    console.log("hello right")
-    testimonialBody.style.scrollBehavior = "auto";
-    if (scrollLeft > 0) {
-        leftArrow.disabled = false
-    }
-    if (scrollLeft >= maxScrollableWidth) {
-        rightRrrow.disabled = true
-    }
+    testimonialBody.scrollLeft += testimonialCard.offsetWidth + 24;
 })
-
-// slider click dot
-/* console.log(dotButtons)
-dotButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        document.querySelector('.testimonial__dots .dot__active').classList.remove('dot__active');
-        testimonialBody.style.scrollBehavior = "smooth";
-        testimonialBody.scrollLeft = 396 * index;
-        button.classList.add('dot__active');
-        testimonialBody.style.scrollBehavior = "auto";
-    })
-}) */
 /*=========================
     Testimonial Slide End
 ========================== */
@@ -338,12 +277,12 @@ blogDescription.forEach((descript) => {
 })
 // push content in modal
 allCrad.forEach((card) => {
-    const cardButton = card.children[2].children[2];
+    const cardButton = card.children[1].children[2];
     cardButton.addEventListener('click', () => {
         blogModal.style.visibility = "visible"
         modalImg.src = card.children[0].children[0].currentSrc
-        modalTitle.innerHTML = card.children[2].children[0].innerHTML
-        modalText.innerHTML = card.children[2].children[3].innerHTML
+        modalTitle.innerHTML = card.children[1].children[0].innerHTML
+        modalText.innerHTML = card.children[1].children[3].innerHTML
     })
 })
 // modal close button
