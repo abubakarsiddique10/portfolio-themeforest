@@ -74,6 +74,8 @@
     --font-weight-black: 900;
 
     
+
+    
     /* Border color */
     --color-border-1: rgba(71,85,105,.1);
 
@@ -154,7 +156,7 @@
     height: 100vh;
     background: white url('../images/preloader/Spin-1s-200px\ \(1\).gif') no-repeat center center;
     position: fixed;
-    background-size: 90px;
+    background-size: 50px;
     top: 0;
     z-index: 9999;
 }
@@ -178,7 +180,8 @@ body {
     font-family: var(--font-primary);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    font-weight: 400;
+    font-weight: var(--font-weight-normal);
+    letter-spacing: -0.4px;
     font-style: normal;
 }
 .container {
@@ -198,10 +201,10 @@ button {
     outline: none;
     border: none;
 }
-.services__header, .price__header, .testimonial__header, .portfolio__header, .blog__header, .contact__header {
+/* .services__header, .price__header, .testimonial__header, .portfolio__header, .blog__header, .contact__header {
     text-align: center;
     margin-bottom: 60px;
-}
+} */
 
 footer,section:not(#banner) {
     padding-top: 100px;
@@ -251,9 +254,16 @@ footer,section:not(#banner) {
     NAV STYLE START 
 ==========================*/
 #header {
-    background: var(--color-white-100);
+    /* background: var(--color-white-100); */
     /* border-bottom: 1px solid rgba(71,85,105,.1); */
     z-index: 100;
+    
+    /* background: var(--color-secondary); */
+    /* background: transparent; */
+}
+.header__bg {
+    transition: all 0.3s ease;
+    background:var(--color-white-100)
 }
 .navbar {
     padding: 13px 0;
@@ -261,20 +271,22 @@ footer,section:not(#banner) {
 .nav-link {
     text-transform: capitalize;
     font-weight: 500;
-    padding: 8px 12px !important;
+    padding: 8px 16px !important;
     border-radius: 6px;
     font-size: var(--font-size-sm);
     line-height: var(--line-height-sm);
     color: var(--color-black-200);
+    letter-spacing: -0.45px;
+    font-size: 15px;
 }
 .nav-link:hover {
-    color: white !important;
-    background: black;
+   /*  color: white !important;
+    background: black; */
 }
-.nav-active {
+/* .nav-active {
     background: var(--color-black-100);
     color: var(--color-white-100)
-}
+} */
 .navbar-brand {
     font-size: var(--font-size-xl);
     line-height: var(--line-height-xl);
@@ -317,9 +329,10 @@ footer,section:not(#banner) {
     color: var(--color-primary, #FFB400);
 }
 .banner__description {
-    font-weight: 400;
-    text-transform: capitalize;
     margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.45px;
 }
 .banner__btn {
     display: block;
@@ -373,7 +386,8 @@ footer,section:not(#banner) {
     height: 100%;
 }
 .service__icon i {
-    font-size: 48px;
+    /* font-size: 48px; */
+    font-size: 45px;
     color: var(--color-primary)
 }
 
@@ -392,11 +406,11 @@ footer,section:not(#banner) {
     color: var(--color-primary);
     transform: scale(1.02);
 }
-.services__card .card__img {
+/* .services__card .card__img {
     width: 50px;
     height: 50px;
     fill: var(--color-primary);
-}
+} */
 .services__card .card__body {
     margin-top: 20px;
 }
@@ -407,10 +421,12 @@ footer,section:not(#banner) {
     text-transform: capitalize;
     margin-bottom: 15px;
     font-size: 22px;
+    letter-spacing: -0.5px
 }
 .services__card .card__text {
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     line-height: 26px;
+    letter-spacing: -0.3px;
     margin-bottom: 15px;
 }
 .service__details {
@@ -428,6 +444,7 @@ footer,section:not(#banner) {
     justify-content: center;
     visibility: hidden;
     z-index: 1;
+    padding: 0 15px;
 }
 .services__modal_content {
     position: relative;
@@ -509,34 +526,64 @@ footer,section:not(#banner) {
     border: 1px solid var(--color-border-1);
     background: rgb(248 250 252);
 }
- .portfolio__wrappper img {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    display: none;
-    cursor: pointer;
-    background: #e8e8e8;
-}
-
 .portfolio__menu .menu__item {
     font-size: var(--font-size-lg);
     font-weight: 500;
-    line-height: 22px;
+    line-height: 28px;
+    letter-spacing: -0.45px;
     text-transform: capitalize;
     cursor: pointer;
     white-space: nowrap;
     user-select: none;
 }
-.portfolio__content .portfolio__img {
-   width: 100%;
+.portfolio__menu .active {
+    color: var(--color-primary, #FFB400);
+}
+.portfolio__card {
+   border: 1px solid rgba(71,85,105,.1);
+   border-radius: 4px;
    height: 100%;
    transition: all 0.5s ease;
 }
-.portfolio__item:hover .portfolio__img {
-    transform: scale(1.04);
+.portfolio__card:hover {
+    transform: scale(1.03);
 }
-.portfolio__menu .active {
-    color: var(--color-primary, #FFB400);
+.portfolio__card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.portfolio__card .card__body {
+    padding: 24px;
+}
+.portfolio__card .card__title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+    text-transform: capitalize;
+    margin-bottom: 8px
+}
+.portfolio__card .card__content {
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.portfolio__content ul {
+    padding-left: 14px;
+    margin-bottom: 0;
+}
+.portfolio__content ul li{
+    list-style: disc;
+    margin-bottom: 4px;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    text-transform: capitalize;
+}
+.portfolio__content ul li::first-letter {
+    text-transform: uppercase;
 }
 /*=========================
     PORTFOLIO STYLE START 
@@ -618,11 +665,12 @@ footer,section:not(#banner) {
 }
 .testimonial__card .card__content {
     margin-bottom: 30px;
+
 }
 .testimonial__card .card__text {
-    line-height: 24px;
-    text-transform: capitalize;
-    
+    /* line-height: 24px;
+    text-transform: capitalize; */
+    line-height: 26px;
 }
 .testimonial__card .card__footer {
     display: flex;
@@ -630,8 +678,8 @@ footer,section:not(#banner) {
     align-items: center
 }
 .client__img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 100%;
     border: 0.5px solid #8080803b;
     object-fit: cover;
@@ -643,7 +691,7 @@ footer,section:not(#banner) {
     line-height: var(--line-height-lg);
     font-weight: 500;
     text-transform: capitalize;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 .testimonial__card .client__title {
     font-size: var(--font-size-base);
@@ -666,6 +714,7 @@ footer,section:not(#banner) {
     width: 100%;
     height: 235px;
     object-fit: cover;
+    cursor: pointer;
 }
 .blog__thumb img {
     width: 100%;
@@ -673,23 +722,54 @@ footer,section:not(#banner) {
     object-fit: cover;
 }
 .blog .blog__content {
-    padding: 24px;
+    padding: 30px;
 }
+.blog__category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.blog__time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+}
+.blog__time i {
+    font-size: 12px;
+}
+.blog__tag{
+    font-weight: 500;
+    display: block;
+    text-transform: lowercase;
+}
+.blog__tag::before {
+    content: "#";
+    color: black;
+}
+/* .blog__tag {
+    color: #FC4EB7;
+} */
 .blog .blog__title {
-    font-weight: 600;
     font-size: 20px;
-    line-height: 1.5;
-    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -0.4px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
+.blog .blog__title:hover {
+    color: #2F3AB2;
+}
+
 .hidden__details {
     display: none;
 }
 .blog .blog__details * {
    margin-bottom: 10px;
    font-size: 16px;
-}
-.blog__meta {
-    margin-top: 15px;
 }
 /* Blog modal */
 .blog__modal {
@@ -703,6 +783,7 @@ footer,section:not(#banner) {
     justify-content: center;
     visibility: hidden;
     background: white;
+    padding: 0 15px;
 }
 .modal__content {
     position: relative;
@@ -730,6 +811,7 @@ footer,section:not(#banner) {
     font-weight: 700;
     line-height: 60px;
 }
+
 .modal__thumb {
     width: 100%;
     max-height: 350px;
@@ -763,6 +845,10 @@ footer,section:not(#banner) {
 .modal__btn:hover i{
     color: #1E3050;
 }
+
+
+
+
 /*=========================
     BLOG STYLE START 
 ==========================*/
@@ -781,11 +867,13 @@ footer,section:not(#banner) {
 .contact__left__title {
     margin-bottom: 18px;
 }
-.contact__subtitle {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
-    margin-bottom: 15px;
+.social__area h6 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 14px;
     text-transform: capitalize;
+    line-height: 28px;
+    letter-spacing: -0.45px;
 }
 .contact__description {
     text-transform: capitalize;
@@ -837,7 +925,7 @@ footer,section:not(#banner) {
     background: var(--color-primary);
     color: var(--color-black-100);
 }
-.contact__social {
+.social__area {
     margin-top: 20px;
 }
 .social__icon {

@@ -42,11 +42,28 @@ window.addEventListener('load', () => {
 const navbarToggler = document.querySelector('.navbar-toggler');
 const openMenu = document.getElementById('open-menu');
 const closenMenu = document.getElementById('close-menu');
+let isOpen = false
 
 navbarToggler.addEventListener('click', (e) => {
     openMenu.style.display = e.target.id == "open-menu" ? "none" : "block";
     closenMenu.style.display = e.target.id == "close-menu" ? "none" : "block";
+    isOpen = !isOpen;
+    header.classList.toggle('header__bg')
+    if (window.scrollY > 0) {
+        header.classList.add('header__bg')
+    }
 })
+// windo scroll navbar bg color change
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0 && !isOpen) {
+        header.classList.add('header__bg')
+    } else if (isOpen) {
+        header.classList.add('header__bg')
+    } else {
+        header.classList.remove('header__bg')
+    }
+})
+
 
 
 // Navbar active class
@@ -168,7 +185,7 @@ themeToggle.addEventListener('click', () => {
     Portfolio Start
 ==========================*/
 const portfolioMenu = document.querySelector('.portfolio__menu');
-const portfolioItem = document.querySelectorAll('.portfolio__item');
+const portfolioCards = document.querySelectorAll('.portfolio__content .col');
 const arrowIcons = document.querySelectorAll('.portfolio__wrappper img');
 
 // Portfolio Menu Dragging
@@ -194,13 +211,14 @@ portfolioMenu.addEventListener('scroll', slideShow)
 portfolioMenu.addEventListener('click', (e) => {
     if (e.target.matches('li')) {
         const menuId = e.target.id;
-        portfolioItem.forEach((item) => {
-            if (menuId != item.id && menuId != "all-categories") {
-                item.style.display = "none"
+        console.log(menuId)
+        portfolioCards.forEach((card) => {
+            if (menuId != card.id && menuId != "all-categories") {
+                card.style.display = "none"
             } else {
                 document.querySelector('.portfolio__menu .active').classList.remove('active');
                 e.target.classList.add('active')
-                item.style.display = "block";
+                card.style.display = "block";
             }
         })
     }
@@ -263,26 +281,21 @@ rightRrrow.addEventListener('click', () => {
 
 
 /* Blog Start */
-const blogDescription = document.querySelectorAll('.blog__description');
-const allCardButton = document.querySelectorAll('.card__btn');
-const allCrad = document.querySelectorAll('.blog .card');
+const allCrad = document.querySelectorAll('.blog .col');
 const blogModal = document.querySelector('.blog__modal');
 const modalButton = document.querySelector('.modal__btn');
 let modalTitle = document.querySelector('.modal__title');
 let modalText = document.querySelector('.modal__text');
 let modalImg = document.querySelector('.modal__img');
-// Slice blog description
-blogDescription.forEach((descript) => {
-    descript.innerHTML = descript.innerText.length > 115 ? descript.innerText.slice(0, 115) + "..." : descript.innerText
-})
 // push content in modal
 allCrad.forEach((card) => {
-    const cardButton = card.children[1].children[2];
-    cardButton.addEventListener('click', () => {
-        blogModal.style.visibility = "visible"
-        modalImg.src = card.children[0].children[0].currentSrc
-        modalTitle.innerHTML = card.children[1].children[0].innerHTML
-        modalText.innerHTML = card.children[1].children[3].innerHTML
+    card.addEventListener('click', (e) => {
+        if (e.target.matches('h5, img')) {
+            blogModal.style.visibility = "visible"
+            modalImg.src = card.children[0].children[0].children[0].currentSrc
+            modalTitle.innerHTML = card.children[0].children[1].children[1].innerHTML
+            modalText.innerHTML = card.children[0].children[1].children[3].innerHTML
+        }
     })
 })
 // modal close button
@@ -317,3 +330,7 @@ servicesModalBtn.addEventListener('click', () => {
     servicesModal.style.visibility = "hidden"
 })
 /* Services End */
+
+
+
+

@@ -15,13 +15,11 @@
     <div id="preloader">
     </div>
 
-    <!-- =======================
-    Header Start -->
     <header id="header" class="position-fixed w-100 top-0">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid px-0">
-                    <a class="navbar-brand" href="#">Jhon Doe</a>
+                    <a class="navbar-brand" href="index.html">Jhon Doe</a>
                     <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -29,7 +27,7 @@
                         <img id="close-menu" src="./assets/images/icons/close-menu.svg" alt="">
                     </button>
                     <div class="collapse navbar-collapse mt-2 mt-lg-0" id="navbarTogglerDemo02">
-                        <ul class="navbar-nav gap-1 gap-lg-2 ms-auto mb-2 mb-lg-0">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link nav-active" aria-current="page" href="#banner">Home</a>
                             </li>
@@ -54,8 +52,6 @@
             </nav>
         </div>
     </header>
-    <!-- =======================
-    Header End -->
 
     <main>
         <!-- =======================
@@ -68,32 +64,36 @@
                         <h1 class="banner__title">Hi, I’m Jhon Doe<br>
                             <span>Front-End</span> Developer
                         </h1>
-                        <p class="banner__description">I'm A FrontEnd Developer, And I Specialize In Efficient React,
-                            HTML, CSS & JavaScript That Just Work Across All
-                            Platforms And Browsers. For The Past Two Years, I Gather Knowledge In Various Parts Of Web
-                            Development. My Goal Is To
-                            Become A Full-Stack Web Developer Who Can Make Beautiful UI And Also Can Handle The Back-End
-                            Smoothly. Lorem Ipsum Dolor
-                            Sit Amet Consectetur Adipisicing Elit. Corrupti, Beatae Quo Consequatur Dolorum Itaque
-                            Doloribus?</p>
+                        <p class="banner__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                            perspiciatis non, eos obcaecati culpa, dolor delectus quas debitis aliquid cum magnam ipsum
+                            unde voluptate reiciendis quibusdam illo laudantium expedita quidem. Lorem ipsum dolor sit
+                            amet consectetur adipisicing elit. Fugit
+                            perspiciatis non, eos obcaecati culpa, dolor delectus quas debitis.
+                        </p>
 
                         <!-- <button class="banner__btn mx-auto mx-lg-0">
                             <span>HIRE ME</span>
                             <img class="banner__arrow" src="./assets/images/icons/Frame.svg" alt="">
                         </button> -->
-                        <div class="social__icon">
-                            <a class="social__link" href="#">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-                            <a class="social__link" href="#">
-                                <i class="fa-brands fa-twitter"></i>
-                            </a>
-                            <a class="social__link" href="#">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                            <a class="social__link" href="#">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
+                        <div class="social__area">
+                            <h6>Please follow me</h6>
+                            <!--  <h6>You can follow me</h6> -->
+                            <!-- <h6>Join me on social media</h6> -->
+                            <div class="social__icon">
+                                <a class="social__link" href="#">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a class="social__link" href="#">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a class="social__link" href="#">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a class="social__link" href="#">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="banner__right">
@@ -306,14 +306,72 @@
                 <div class="d-flex justify-content-center mb-5 rounded portfolio__wrappper">
                     <ul class="portfolio__menu d-flex gap-4 mb-0 py-3 px-4 ">
                         <li id="all-categories" class="menu__item active">All categories</li>
-                        <li id="ui-design" class="menu__item">UI Design</li>
+                        <li id="web-design" class="menu__item">Web Design</li>
                         <li id="web-templates" class="menu__item">Web Templates</li>
-                        <li id="logo" class="menu__item">Logo</li>
                         <li id="app-development" class="menu__item">App Development</li>
                     </ul>
                 </div>
+                <div class="portfolio__content row row-cols-sm-2 row-cols-lg-3 g-4">
+                    <div class="col" id="web-design">
+                        <div class="portfolio__card">
+                            <a href="https://portfolio-sample-peach.vercel.app/" target="_blank">
+                                <img src="./assets/images/portfolio/ui-design.jpg" alt="">
+                            </a>
+                            <div class="card__body">
+                                <h3 class="card__title">Web Design Agency Responsive Site Template</h3>
+                                <p class="card__content">
+                                    <span>Technologies: </span>
+                                    HTML, CSS, JS, React, Next.js
+                                </p>
+                                <ul>
+                                    <li>Light and dark versions</li>
+                                    <li>Creative design</li>
+                                    <li>Fully responsive layout</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" id="web-templates">
+                        <div class="portfolio__card">
+                            <a href="https://portfolio-sample-peach.vercel.app/" target="_blank">
+                                <img src="./assets/images/portfolio/web-development.jpg" alt="">
+                            </a>
+                            <div class="card__body">
+                                <h3 class="card__title">Tailwind CSS Personal Portfolio Template</h3>
+                                <p class="card__content">
+                                    <span>Technologies: </span>
+                                    HTML, CSS, JS, React, Next.js
+                                </p>
+                                <ul>
+                                    <li>Light and dark versions</li>
+                                    <li>Creative design</li>
+                                    <li>Fully responsive layout</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" id="app-development">
+                        <div class="portfolio__card">
+                            <a href="https://portfolio-sample-peach.vercel.app/" target="_blank">
+                                <img src="./assets/images/portfolio/app-development.jpg" alt="">
+                            </a>
+                            <div class="card__body">
+                                <h3 class="card__title">Mobile App Development Agency HTML5 Template</h3>
+                                <p class="card__content">
+                                    <span>Technologies: </span>
+                                    HTML, CSS, JS, React, Next.js
+                                </p>
+                                <ul>
+                                    <li>Light and dark versions</li>
+                                    <li>Creative design</li>
+                                    <li>Fully responsive layout</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="portfolio__content row g-4">
+                </div>
+                <!--  <div class="portfolio__content row g-4">
                     <div id="ui-design" class="col-sm-6 col-lg-4 portfolio__item">
                         <img class="portfolio__img" src="./assets/images/portfolio-img/ui.jpg" alt="portfolio-img">
                     </div>
@@ -333,7 +391,7 @@
                     <div id="logo" class="col-sm-6 col-lg-4 portfolio__item">
                         <img class="portfolio__img" src="./assets/images/portfolio-img/logo2.jpg" alt="portfolio-img">
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- =======================
@@ -372,10 +430,13 @@
                                 <h4 class="card__title">Great Quality!</h4>
                             </div>
                             <div class="card__content">
-                                <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+                                <p class="card__text">
+                                    Maecenas placerat tellus rutrum nisl efficitur pretium. Quisque non tempus neque.
+                                    Donec hendrerit dolor et purus
+                                    tincidunt egestas. Vitae
                                     nulla
-                                    diam in ac dictum a urna viverra morbi. Morbi donec
-                                    amet....</p>
+                                    diam in ac dictum.
+                                </p>
                             </div>
                             <div class="card__footer">
                                 <img draggable="false" class="client__img" src="./assets/images/client-img/client.png"
@@ -398,10 +459,12 @@
                                 <h4 class="card__title">Amazing work!</h4>
                             </div>
                             <div class="card__content">
-                                <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+                                <p class="card__text">Maecenas placerat tellus rutrum nisl efficitur pretium. Quisque
+                                    non tempus neque.
+                                    Donec hendrerit dolor et purus
+                                    tincidunt egestas. Vitae
                                     nulla
-                                    diam in ac dictum a urna viverra morbi. Morbi donec
-                                    amet... </p>
+                                    diam in ac dictum.</p>
                             </div>
                             <div class="card__footer">
                                 <img draggable="false" class="client__img" src="./assets/images/client-img/client.png"
@@ -424,10 +487,12 @@
                                 <h4 class="card__title">Great Quality!</h4>
                             </div>
                             <div class="card__content">
-                                <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+                                <p class="card__text">Maecenas placerat tellus rutrum nisl efficitur pretium. Quisque
+                                    non tempus neque.
+                                    Donec hendrerit dolor et purus
+                                    tincidunt egestas. Vitae
                                     nulla
-                                    diam in ac dictum a urna viverra morbi. Morbi donec
-                                    amet....</p>
+                                    diam in ac dictum.</p>
                             </div>
                             <div class="card__footer">
                                 <img draggable="false" class="client__img" src="./assets/images/client-img/client.png"
@@ -531,26 +596,35 @@
             <div class="container">
                 <div class="blog__header">
                     <h5 class="header__subtitle">blog</h5>
-                    <h2 class="header__title">Latest blog / news</h2>
+                    <h2 class="header__title">Latest blog</h2>
                 </div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                     <div class="col">
                         <div class="card p-0 position-relative">
                             <div class="blog__thumb">
-                                <img src="./assets/images/blog/blog.jpg" alt="Card image cap">
+                                <img src="./assets/images/blog/7.jpg" alt="Card image cap">
                             </div>
-
-
                             <div class="blog__content">
-                                <h5 class="blog__title">My Dream Developer Job Can Be Within Your
-                                    Reach</h5>
-                                <p class="blog__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Excepturi neque tempore eaque? EligEndi perspiciatis iure.
-                                </p>
-                                <button class="card__btn d-flex align-items-center gap-2 read_more_btn">
-                                    read more
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </button>
+                                <div class="blog__category">
+                                    <a class="blog__tag" href="#">development</a>
+                                    <div class="blog__time">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <small>2 min read</small>
+                                    </div>
+                                </div>
+
+                                <h5 class="blog__title">Maecenas placerat tellus rutrum nisl efficitur pretium.</h5>
+
+                                <div class="blog__meta d-flex justify-content-between align-items-center">
+                                    <div class="author-name d-flex align-items-center gap-2">
+                                        <i class="far fa-user"></i>
+                                        <span>Fardin Amin</span>
+                                    </div>
+                                    <div class="release-data d-flex align-items-center gap-2">
+                                        <i class="far fa-calEndar-alt"></i>
+                                        <span>Jun 10, 2023</span>
+                                    </div>
+                                </div>
 
                                 <div class="hidden__details">
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque voluptatibus
@@ -592,17 +666,6 @@
                                         consectetur adipisicing elit. Ab accusamus mollitia explicabo! Exercitationem
                                         aliquam maiores corporis iste molestiae. Magnam placeat, doloribus ipsam
                                         voluptatem totam suscipit dolorum enim necessitatibus numquam voluptatibus?</p>
-                                </div>
-
-                                <div class="blog__meta d-flex justify-content-between align-items-center">
-                                    <div class="author-name d-flex align-items-center gap-2">
-                                        <i class="far fa-user"></i>
-                                        <span>Fardin Amin</span>
-                                    </div>
-                                    <div class="release-data d-flex align-items-center gap-2">
-                                        <i class="far fa-calEndar-alt"></i>
-                                        <span>Jun 10, 2023</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -610,20 +673,29 @@
                     <div class="col">
                         <div class="card p-0 position-relative">
                             <div class="blog__thumb">
-                                <img src="./assets/images/blog/blog.jpg" alt="Card image cap">
+                                <img src="./assets/images/blog/6.jpg" alt="Card image cap">
                             </div>
-
-
                             <div class="blog__content">
-                                <h5 class="blog__title">My Dream Developer Job Can Be Within Your
-                                    Reach</h5>
-                                <p class="blog__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Excepturi neque tempore eaque? EligEndi perspiciatis iure.
-                                </p>
-                                <button class="card__btn d-flex align-items-center gap-2 read_more_btn">
-                                    read more
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </button>
+                                <div class="blog__category">
+                                    <a class="blog__tag" href="#">programming</a>
+                                    <div class="blog__time">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <small>2 min read</small>
+                                    </div>
+                                </div>
+
+                                <h5 class="blog__title">Maecenas placerat tellus rutrum nisl efficitur pretium.</h5>
+
+                                <div class="blog__meta d-flex justify-content-between align-items-center">
+                                    <div class="author-name d-flex align-items-center gap-2">
+                                        <i class="far fa-user"></i>
+                                        <span>Fardin Amin</span>
+                                    </div>
+                                    <div class="release-data d-flex align-items-center gap-2">
+                                        <i class="far fa-calEndar-alt"></i>
+                                        <span>Jun 10, 2023</span>
+                                    </div>
+                                </div>
 
                                 <div class="hidden__details">
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque voluptatibus
@@ -665,17 +737,6 @@
                                         consectetur adipisicing elit. Ab accusamus mollitia explicabo! Exercitationem
                                         aliquam maiores corporis iste molestiae. Magnam placeat, doloribus ipsam
                                         voluptatem totam suscipit dolorum enim necessitatibus numquam voluptatibus?</p>
-                                </div>
-
-                                <div class="blog__meta d-flex justify-content-between align-items-center">
-                                    <div class="author-name d-flex align-items-center gap-2">
-                                        <i class="far fa-user"></i>
-                                        <span>Fardin Amin</span>
-                                    </div>
-                                    <div class="release-data d-flex align-items-center gap-2">
-                                        <i class="far fa-calEndar-alt"></i>
-                                        <span>Jun 10, 2023</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -683,20 +744,29 @@
                     <div class="col">
                         <div class="card p-0 position-relative">
                             <div class="blog__thumb">
-                                <img src="./assets/images/blog/blog.jpg" alt="Card image cap">
+                                <img src="./assets/images/blog/10.jpg" alt="Card image cap">
                             </div>
-
-
                             <div class="blog__content">
-                                <h5 class="blog__title">My Dream Developer Job Can Be Within Your
-                                    Reach</h5>
-                                <p class="blog__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Excepturi neque tempore eaque? EligEndi perspiciatis iure.
-                                </p>
-                                <button class="card__btn d-flex align-items-center gap-2 read_more_btn">
-                                    read more
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </button>
+                                <div class="blog__category">
+                                    <a class="blog__tag" href="#">software</a>
+                                    <div class="blog__time">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <small>2 min read</small>
+                                    </div>
+                                </div>
+
+                                <h5 class="blog__title">My Dream Developer Job Can Be Within Your My Dream.</h5>
+
+                                <div class="blog__meta d-flex justify-content-between align-items-center">
+                                    <div class="author-name d-flex align-items-center gap-2">
+                                        <i class="far fa-user"></i>
+                                        <span>Fardin Amin</span>
+                                    </div>
+                                    <div class="release-data d-flex align-items-center gap-2">
+                                        <i class="far fa-calEndar-alt"></i>
+                                        <span>Jun 10, 2023</span>
+                                    </div>
+                                </div>
 
                                 <div class="hidden__details">
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque voluptatibus
@@ -738,17 +808,6 @@
                                         consectetur adipisicing elit. Ab accusamus mollitia explicabo! Exercitationem
                                         aliquam maiores corporis iste molestiae. Magnam placeat, doloribus ipsam
                                         voluptatem totam suscipit dolorum enim necessitatibus numquam voluptatibus?</p>
-                                </div>
-
-                                <div class="blog__meta d-flex justify-content-between align-items-center">
-                                    <div class="author-name d-flex align-items-center gap-2">
-                                        <i class="far fa-user"></i>
-                                        <span>Fardin Amin</span>
-                                    </div>
-                                    <div class="release-data d-flex align-items-center gap-2">
-                                        <i class="far fa-calEndar-alt"></i>
-                                        <span>Jun 10, 2023</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -829,8 +888,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="contact__social">
-                                <h3 class="contact__subtitle mb-3">Follow Me</h3>
+                            <div class="social__area">
+                                <h6>Follow Me</h6>
                                 <div class="social__icon">
                                     <a class="social__link" href="#">
                                         <i class="fa-brands fa-facebook-f"></i>
