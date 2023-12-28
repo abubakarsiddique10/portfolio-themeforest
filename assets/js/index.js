@@ -254,6 +254,7 @@ testimonialBody.addEventListener('scroll', () => {
     const maxScrollableWidth = testimonialBody.scrollWidth - testimonialBody.clientWidth;
     leftArrow.disabled = testimonialScrollLeft > 0 ? false : true
     rightRrrow.disabled = testimonialScrollLeft >= maxScrollableWidth ? true : false
+    rightRrrow.style.color = testimonialScrollLeft >= maxScrollableWidth ? "red" : "black"
 })
 
 // slider draging
