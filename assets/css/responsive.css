@@ -12,8 +12,9 @@
         line-height: 45px;
     }
     .testimonial__card {
-        width: calc(960px / 2);
+        user-select: none;
         cursor: grab;
+        width: calc(960px / 2);
     }
     .social__area {
         align-items: center
