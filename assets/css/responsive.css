@@ -1,21 +1,29 @@
 
-@media (max-width: 992px) {
-    /* #header {
-        background: #FFFFFF
-    } */
+@media  (max-width: 991px) {
     .banner {
         height: auto;
-        padding-top: 100px;
-        padding-bottom: 0;
+        padding: 100px 0;
     }
-    .banner__left {
+    /* .banner__left {
         margin-bottom: 100px;
+    } */
+    .banner__title, .blog__modal_title {
+        font-size: 36px;
+        line-height: 45px;
     }
     .testimonial__card {
         width: calc(960px / 2);
     }
+    .social__area {
+        align-items: center
+    }
 }
 @media (max-width: 768px) {
+    /* .banner {
+        height: auto;
+        padding-top: 100px;
+        padding-bottom: 0;
+    } */
     .testimonial__card {
         width: 100%;
     }
@@ -75,18 +83,13 @@
     .contact__right, .contact__left {
         border: none;
     }
-    .hero__title {
-        font-size: 32px;
-        line-height:40px;
-    }
-    .modal__title  {
-        font-size: 30px;
-        line-height: 37.5px;
-    }
-    
 }
 @media (max-width: 576px) {
-    .modal__body {
+    .banner__title, .blog__modal_title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+    .blog__modal_body, .services__modal_body {
         padding-left: 0;
         padding-right: 0;
         border: 0;
@@ -95,3 +98,8 @@
 /*=========================
     MEDIA QUERIES END 
 ==========================*/
+
+/* 
+992 f-36 l-45
+576 f-30 l-38
+*/

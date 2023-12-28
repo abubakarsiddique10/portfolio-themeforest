@@ -283,18 +283,22 @@ rightRrrow.addEventListener('click', () => {
 /* Blog Start */
 const allCrad = document.querySelectorAll('.blog .col');
 const blogModal = document.querySelector('.blog__modal');
-const modalButton = document.querySelector('.modal__btn');
-let modalTitle = document.querySelector('.modal__title');
-let modalText = document.querySelector('.modal__text');
-let modalImg = document.querySelector('.modal__img');
+const modalButton = document.querySelector('.blog__modal_btn');
+let modalTitle = document.querySelector('.blog__modal_title');
+let modalText = document.querySelector('.blog__modal_text');
+let modalImg = document.querySelector('.blog__modal_thumb img');
+let blogMeta = document.querySelector('.blog__modal .blog__meta');
+
 // push content in modal
 allCrad.forEach((card) => {
     card.addEventListener('click', (e) => {
+        console.dir(card.children[0].children[1].children[0].innerHTML)
         if (e.target.matches('h5, img')) {
             blogModal.style.visibility = "visible"
             modalImg.src = card.children[0].children[0].children[0].currentSrc
             modalTitle.innerHTML = card.children[0].children[1].children[1].innerHTML
-            modalText.innerHTML = card.children[0].children[1].children[3].innerHTML
+            modalText.innerHTML = card.children[0].children[1].children[3].innerHTML;
+            blogMeta.innerHTML = card.children[0].children[1].children[2].innerHTML
         }
     })
 })
@@ -313,14 +317,13 @@ const allServicesCard = document.querySelectorAll('.services__card');
 const servicesModalBtn = document.querySelector('.services__modal_btn');
 let servicesModalIcon = document.querySelector('.services__modal_icon');
 let servicesModalTitle = document.querySelector('.services__modal_title h3');
-let servicesModalTitleIcon = document.querySelector('.services__modal_title i');
+
 let servicesModalText = document.querySelector('.services__modal_text');
 
 allServicesCard.forEach((card) => {
     const cardButton = card.children[1].children[2]
     cardButton.addEventListener('click', () => {
         servicesModal.style.visibility = "visible"
-        servicesModalTitleIcon.className = card.children[0].children[0].className;
         servicesModalTitle.innerText = card.children[1].children[0].innerText;
         servicesModalText.innerHTML = card.children[2].innerHTML
     })
