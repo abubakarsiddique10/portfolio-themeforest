@@ -253,7 +253,7 @@ testimonialBody.addEventListener('scroll', () => {
     const testimonialScrollLeft = testimonialBody.scrollLeft
     const maxScrollableWidth = testimonialBody.scrollWidth - testimonialBody.clientWidth;
     leftArrow.disabled = testimonialScrollLeft > 0 ? false : true
-    rightRrrow.disabled = testimonialScrollLeft == maxScrollableWidth ? true : false
+    rightRrrow.disabled = testimonialScrollLeft >= maxScrollableWidth ? true : false
 })
 
 // slider draging
