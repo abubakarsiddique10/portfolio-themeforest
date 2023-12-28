@@ -13,6 +13,7 @@
     }
     .testimonial__card {
         width: calc(960px / 2);
+        cursor: grab;
     }
     .social__area {
         align-items: center

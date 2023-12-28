@@ -693,7 +693,6 @@ footer,section:not(#banner) {
     width: calc(1122px / 3); 
     flex-shrink: 0;
     user-select: none;
-    cursor: pointer;
     height:fit-content;
     flex-grow: 1;
 }
