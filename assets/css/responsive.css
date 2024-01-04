@@ -12,8 +12,6 @@
         line-height: 45px;
     }
     .testimonial__card {
-        user-select: none;
-        cursor: grab;
         width: calc(960px / 2);
     }
     .social__area {
@@ -46,24 +44,20 @@
         max-width: 100%;
         overflow-x: scroll;
     }
-    .portfolio__wrappper::before {
-        left: 0px;
+    .portfolio__wrappper::before, .portfolio__wrappper::after {
         position: absolute;
         content: "";
         width: 25px;
-        height: 52px;
+        height: 100%;
         border-radius: 4px;
         display: inline-block;
+    }
+    .portfolio__wrappper::before {
+        left: -1px;
         background: linear-gradient(90deg, var(--colorBefore), 80%, transparent);
     }
     .portfolio__wrappper::after {
-        right: 0;
-        position: absolute;
-        content: "";
-        width: 25px;
-        height: 52px;
-        border-radius: 4px;
-        display: inline-block;
+        right: -1px;
         background: linear-gradient(-90deg, var(--colorAfter), 80%, transparent);
     }
     .portfolio__menu::-webkit-scrollbar {

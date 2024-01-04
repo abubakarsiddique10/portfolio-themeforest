@@ -30,9 +30,9 @@ const preloader = document.getElementById('preloader');
 
 
 // Preloader
-window.addEventListener('load', () => {
+/* window.addEventListener('load', () => {
     preloader.style.display = "none"
-})
+}) */
 
 
 /*=========================
@@ -197,12 +197,11 @@ portfolioMenu.addEventListener('mousemove', (e) => {
 })
 // this code for slide shadow
 const slideShow = () => {
-    const isTheme = localStorage.getItem('theme');
     const scrollLeft = portfolioMenu.scrollLeft;
     const maxScrollableWidth = portfolioMenu.scrollWidth - portfolioMenu.clientWidth;
 
-    portfolioWrappper.style.setProperty("--colorBefore", scrollLeft > 0 ? `${isTheme == "dark" ? "#242B33" : "#fefefe"}` : "");
-    portfolioWrappper.style.setProperty("--colorAfter", maxScrollableWidth == scrollLeft ? "" : `${isTheme == "dark" ? "#242B33" : "#fefefe"}`)
+    portfolioWrappper.style.setProperty("--colorBefore", scrollLeft > 0 ? "#fefefe" : "");
+    portfolioWrappper.style.setProperty("--colorAfter", maxScrollableWidth == scrollLeft ? "" : "#fefefe")
 }
 slideShow()
 portfolioMenu.addEventListener('scroll', slideShow)
@@ -317,7 +316,6 @@ const allServicesCard = document.querySelectorAll('.services__card');
 const servicesModalBtn = document.querySelector('.services__modal_btn');
 let servicesModalIcon = document.querySelector('.services__modal_icon');
 let servicesModalTitle = document.querySelector('.services__modal_title h3');
-
 let servicesModalText = document.querySelector('.services__modal_text');
 
 allServicesCard.forEach((card) => {
@@ -333,6 +331,22 @@ servicesModalBtn.addEventListener('click', () => {
     servicesModal.style.visibility = "hidden"
 })
 /* Services End */
+
+
+
+const testbtn = document.querySelector('.test-btn');
+let des = document.getElementById('des');
+
+
+testbtn.addEventListener('click', () => {
+    fetchData()
+})
+
+async function fetchData() {
+    const response = await fetch('data.json');
+    const data = await response.json();
+    des.innerText = data[0].des
+}
 
 
 

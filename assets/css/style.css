@@ -38,48 +38,17 @@
     --color-gray-100: #767676;
     --color-gray-200: #3A3B3C;
     --color-white-100: #FFFFFF;
+    --color-border-1: rgba(71,85,105,.1);
     --color-banner-gradient: linear-gradient(180deg,#f8fafc,rgba(242,202,252,.11) 34.69%,rgba(250,198,252,.11) 44.06%,rgba(175,183,255,.11) 54.48%,rgba(142,220,200,.07) 64.9%,#f8fafc 97.95%);
 
 
     /* Font family */
     --font-primary: 'Inter', sans-serif;
 
-
-    /* Font size */
-    --font-size-sm: 14px;
-    --font-size-base: 16px;
-    --font-size-lg: 18px;
-    --font-size-xl: 20px;
-    --font-size-2xl: 24px;
-    --font-size-3xl: 30px;
-    --font-size-4xl: 48px;
-
-
-    /* Line height */
-    --line-height-sm: 20px;
-    --line-height-base: 24px;
-    --line-height-lg: 28px;
-    --line-height-xl: 28px;
-    --line-height-2xl: 32px; 
-    --line-height-3xl: 36px;
-    --line-height-4xl: 1;
-
-
-    /* Font weight */
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --font-weight-extrabold: 800;
-    --font-weight-black: 900;
-
-    
-
-    
-    /* Border color */
-    --color-border-1: rgba(71,85,105,.1);
-
-
+    /* Heading/Title */
+    --banner-title: 50px;
+    --header-title: 30px;
+    --header-subtitle: 14px;
 
     /* --color-primary: #ff014f;
     --color-secondary: #f4f5f6;
@@ -178,9 +147,9 @@ html {
 } */
 body {
     font-family: var(--font-primary);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    font-weight: var(--font-weight-normal);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
     letter-spacing: -0.4px;
     font-style: normal;
 }
@@ -201,10 +170,6 @@ button {
     outline: none;
     border: none;
 }
-/* .services__header, .price__header, .testimonial__header, .portfolio__header, .blog__header, .contact__header {
-    text-align: center;
-    margin-bottom: 60px;
-} */
 
 footer,section:not(#banner) {
     padding-top: 100px;
@@ -214,12 +179,12 @@ footer,section:not(#banner) {
     border-bottom: 0.5px solid #8080803b;
     padding: 100px 0;
 }
-.services__header, .price__header, .testimonial__header, .portfolio__header, .blog__header, .contact__header {
+.section__header{
     text-align: center;
     margin-bottom: 50px;
 }
 .header__title {
-    font-size: 30px;
+    font-size: var(--header-title);
     font-weight: 700;
     letter-spacing: -0.75px;
     line-height: 36px;
@@ -227,9 +192,9 @@ footer,section:not(#banner) {
     text-transform: capitalize;
 }
 .header__subtitle {
-    font-size: 14px;
+    font-size: var(--header-subtitle);
     font-weight: 500;
-    letter-spacing: 1.4;
+    letter-spacing: 1.4px;
     line-height: 20px;
     margin-bottom: 10px;
     text-transform: uppercase;
@@ -298,7 +263,6 @@ footer,section:not(#banner) {
 .header__bg {
     border-bottom: 1px solid rgba(71,85,105,.1);
     background:var(--color-white-100);
-    
 }
 .navbar {
     padding: 13px 0;
@@ -308,8 +272,7 @@ footer,section:not(#banner) {
     font-weight: 500;
     padding: 8px 16px !important;
     border-radius: 6px;
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-sm);
+    line-height: 20px;;
     color: var(--color-black-200);
     letter-spacing: -0.45px;
     font-size: 15px;
@@ -327,8 +290,8 @@ footer,section:not(#banner) {
 
 }
 .navbar-brand {
-    font-size: var(--font-size-xl);
-    line-height: var(--line-height-xl);
+    font-size: 20px;
+    line-height: 28px;
     font-weight: 700;
     color: var(--color-black-200);
     z-index: 1;
@@ -358,24 +321,20 @@ footer,section:not(#banner) {
     /* padding-bottom: 64px; */
 }
 .banner__title {
-    font-family: Inter;
-    /* font-weight: 700;
-    font-size: 50px;
-    line-height: 60px; */
-    font-size: 50px;
+    font-size: var(--banner-title);
     font-weight: 700;
     letter-spacing: -1.2px;
     line-height: 1.2;
     margin-bottom: 25px;
 }
 .banner__title span {
-    color: var(--color-primary, #FFB400);
+    color: var(--color-primary);
 }
 .banner__description {
-    margin-bottom: 35px;
     font-size: 18px;
     line-height: 28px;
     letter-spacing: -0.45px;
+    margin-bottom: 35px;
 }
 .banner__btn {
     display: block;
@@ -386,7 +345,7 @@ footer,section:not(#banner) {
     width: 154px;
     height: 52px;
     border-radius: 5px;
-    background: var(--color-primary, #FFB400);
+    background: var(--color-primary);
     border: none
 }
 .banner__btn span {
@@ -449,25 +408,18 @@ footer,section:not(#banner) {
     color: var(--color-primary);
     transform: scale(1.02);
 }
-/* .services__card .card__img {
-    width: 50px;
-    height: 50px;
-    fill: var(--color-primary);
-} */
 .services__card .card__body {
     margin-top: 20px;
 }
 .services__card .card__title {
-    font-size: var(--font-size-xl);
-    line-height: var(--line-height-xl);
+    font-size: 22px;
+    line-height: 28px;
     font-weight: 500;
     text-transform: capitalize;
     margin-bottom: 15px;
-    font-size: 22px;
     letter-spacing: -0.5px
 }
 .services__card .card__text {
-    /* text-transform: capitalize; */
     line-height: 26px;
     letter-spacing: -0.3px;
     margin-bottom: 15px;
@@ -516,9 +468,6 @@ footer,section:not(#banner) {
     gap: 15px;
 }
 .services__modal_title h3 {
-    /* font-size: 38px;
-    font-weight: 600;
-    line-height: 60px; */
     font-size: 30px;
     font-weight: 700;
     letter-spacing: -0.75px;
@@ -576,7 +525,7 @@ footer,section:not(#banner) {
     background: rgb(248 250 252);
 }
 .portfolio__menu .menu__item {
-    font-size: var(--font-size-lg);
+    font-size: 18px;
     font-weight: 500;
     line-height: 28px;
     letter-spacing: -0.45px;
@@ -643,16 +592,6 @@ footer,section:not(#banner) {
 /*=========================
     TESTIMONIAL STYLE START 
 ==========================*/
-.testimonial__header {
-    display: flex;
-    justify-content: space-between;
-}
-.testimonial__header .header__title {
-    text-align: left;
-}
-.testimonial__header .header__subtitle {
-    text-align: left
-}
 .testimonial__area {
     max-width: 1170px;
 }
@@ -706,8 +645,8 @@ footer,section:not(#banner) {
     color: #FFB400
 }
 .testimonial__card .card__title {
-    font-size: var(--font-size-lg);
-    line-height: var(--line-height-lg);
+    font-size: 18px;
+    line-height: 28px;
     font-weight: 500;
     text-transform: capitalize;
 }
@@ -716,8 +655,6 @@ footer,section:not(#banner) {
 
 }
 .testimonial__card .card__text {
-    /* line-height: 24px;
-    text-transform: capitalize; */
     line-height: 26px;
 }
 .testimonial__card .card__footer {
@@ -735,15 +672,13 @@ footer,section:not(#banner) {
     user-select: none;
 }
 .testimonial__card .client__name {
-    font-size: var(--font-size-lg);
-    line-height: var(--line-height-lg);
+    font-size: 18px;
+    line-height: 28px;
     font-weight: 500;
     text-transform: capitalize;
     margin-bottom: 0px;
 }
 .testimonial__card .client__title {
-    font-size: var(--font-size-base);
-    line-height: var(var(--line-height-base));
     text-transform: capitalize;
 }
 /*=========================
@@ -870,7 +805,6 @@ footer,section:not(#banner) {
     padding: 32px 64px;
     border: 1px solid var(--color-border-1);
 }
-
 .blog__modal_title {
     font-size: 40px;
     font-weight: 700;
@@ -888,13 +822,11 @@ footer,section:not(#banner) {
     width: 2px;
 }
 .blog__modal_content::-webkit-scrollbar-track {
-    background: #F1F1F1
+    background: white
 }
 .blog__modal_content::-webkit-scrollbar-thumb {
-    background: white; 
+    background: #F1F1F1;
 }
-
-
 .blog__modal_btn i {
     font-size: 20px;
     color: var(--color-gray-100);
@@ -943,8 +875,6 @@ footer,section:not(#banner) {
     font-size: 18px;
 }
 .info__title {
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 0;
@@ -996,8 +926,8 @@ footer,section:not(#banner) {
     margin-bottom: 10px;
 }
 .footer__title {
-    font-size: var(--font-size-lg);
-    line-height: var(--line-height-lg);
+    font-size: 18px;
+    line-height: 28px;
     text-transform: capitalize;
     margin-top: 5px;
 }
