@@ -1,33 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 /*=========================
     GLOBAL CSS START 
 ==========================*/ 
-@font-face {
-    font-family: Inter;
-    src: url('../fonts/Inter-Regular.woff') format('woff');
-    font-weight: 400;
-}
-@font-face {
-    font-family: Inter;
-    src: url('../fonts/Inter-Medium.woff') format('woff');
-    font-weight: 500;
-}
-@font-face {
-    font-family: Inter;
-    src: url('../fonts/Inter-SemiBold.woff') format('woff');
-    font-weight: 600;
-}
-@font-face {
-    font-family: Inter;
-    src: url('../fonts/Inter-Bold.woff') format('woff');
-    font-weight: 700;
-}
-@font-face {
-    font-family: Inter;
-    src: url('../fonts/Inter-ExtraBold.woff') format('woff');
-    font-weight: 800;
-}
-
 :root {
     /* Color variables */
     --color-primary: #FFB400;
@@ -43,86 +18,17 @@
 
 
     /* Font family */
-    --font-primary: 'Inter', sans-serif;
+    --font-primary: "Inter", sans-serif;
     /* Heading/Title */
     --banner-title: 50px;
     --header-title: 30px;
     --header-subtitle: 14px;
-
-    /* --color-primary: #ff014f;
-    --color-secondary: #f4f5f6;
-    --color-tertiary: #0d1013;
-    --color-gray: #f6f6f6;
-    --color-subtitle: #f9004d;
-    --background-color-1: linear-gradient(145deg, #1e2024, #23272b);
-    --background-color-2: #212428;
-    --shadow-1: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
-    --shadow-2: inset 21px 21px 19px #181a1d, inset -21px -21px 19px #202225;
-    --inner-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset, -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset;
-    --shadow-white-3: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
-    --gradient-box-w: linear-gradient(145deg, #e2e8ec, #ffffff);
-    --gradient-red-hover: linear-gradient(145deg, #ff014f, #d11414);
-    --color-heading: #ffffff;
-    --color-heading-wv: #1e2125;
-    --color-body: #878e99;
-    --color-body-white: #3c3e41;
-    --color-lightn: #c4cfde;
-    --color-midgray: #878787;
-    --color-light: #E4E6EA;
-    --color-lighter: #CED0D4;
-    --color-lightest: #F0F2F5;
-    --color-border: #E6E6E6;
-    --color-white: #ffffff;
-    --color-white-75: rgba(255, 255, 255, 0.75);
-    --color-success: #3EB75E;
-    --color-danger: #FF0003;
-    --color-warning: #FF8F3C;
-    --color-info: #1BA2DB;
-    --color-facebook: #3B5997;
-    --color-twitter: #1BA1F2;
-    --color-youtube: #ED4141;
-    --color-linkedin: #0077B5;
-    --color-pinterest: #E60022;
-    --color-instagram: #C231A1;
-    --color-vimeo: #00ADEF;
-    --color-twitch: #6441A3;
-    --color-discord: #7289da;
-    --p-light: 300;
-    --p-regular: 400;
-    --p-medium: 500;
-    --p-semi-bold: 600;
-    --p-bold: 700;
-    --p-extra-bold: 800;
-    --p-black: 900;
-    --s-light: 300;
-    --s-regular: 400;
-    --s-medium: 500;
-    --s-semi-bold: 600;
-    --s-bold: 700;
-    --s-extra-bold: 800;
-    --s-black: 900;
-    --transition: 0.4s;
-    --font-primary: "Poppins", sans-serif;
-    --font-secondary: "Montserrat", sans-serif;
-    --font-size-b1: 18px;
-    --font-size-b2: 22px;
-    --font-size-b3: 14px;
-    --line-height-b1: 1.50;
-    --line-height-b2: 1.6;
-    --line-height-b3: 1.7;
-    --h1: 70px;
-    --h2: 60px;
-    --h3: 50px;
-    --h4: 40px;
-    --h5: 30px;
-    --h6: 20px; */
 }
-
 
 #preloader {
     width: 100vw;
     height: 100vh;
-    background: white url('../images/preloader/Spin-1s-200px\ \(1\).gif') no-repeat center center;
+    background: white url('../images/preloader/Spin-2-200px.gif') no-repeat center center;
     position: fixed;
     background-size: 50px;
     top: 0;
@@ -202,7 +108,7 @@ footer,section:not(#banner) {
 }
 .social__area {
     display: flex;
-    align-items: left;
+    align-items: start;
     flex-direction: column;
 }
 .social__area h6 {
@@ -241,15 +147,11 @@ footer,section:not(#banner) {
 
 
 
-
 /*=========================
     NAV STYLE START 
 ==========================*/
 #header {
-    /* background: var(--color-white-100); */
     z-index: 100;
-    /* background: var(--color-secondary); */
-    /* background: transparent; */
 }
 .header__bg {
     border-bottom: 1px solid rgba(71,85,105,.1);
@@ -270,15 +172,10 @@ footer,section:not(#banner) {
     color: rgba(0, 0, 0, 0.8);
 }
 .nav-link:hover {
-   /*  color: white !important;
-    background: black; */
     color: var(--color-black-100)
 }
 .nav-active {
-   /*  background: var(--color-black-100);
-    color: var(--color-white-100) */
     color: var(--color-black-100)
-
 }
 .navbar-brand {
     font-size: 20px;
@@ -308,7 +205,6 @@ footer,section:not(#banner) {
 }
 .banner {
     height: calc(100vh - 1px);
-    /* padding-bottom: 64px; */
 }
 .banner__title {
     font-size: var(--banner-title);
@@ -364,6 +260,7 @@ footer,section:not(#banner) {
 /*=========================
     BANNER STYLE END 
 ==========================*/
+
 
 
 /*=========================
@@ -438,15 +335,6 @@ footer,section:not(#banner) {
     overflow-y: auto;
     background: #FFFFFF;
 }
-.services__modal_content::-webkit-scrollbar {
-    width: 2px;
-}
-.services__modal_content::-webkit-scrollbar-track {
-    background: #F1F1F1;
-}
-.services__modal_content::-webkit-scrollbar-thumb {
-    background: white;
-}
 .services__modal_body {
     padding: 32px 64px;
     border: 1px solid var(--color-border-1);
@@ -496,7 +384,7 @@ footer,section:not(#banner) {
 .services__modal_btn i {
     font-size: 20px;
     color: var(--color-gray-100);
-    transition: all 0.03 ease;
+    transition: all 0.03s ease;
 }
 .services__modal_btn:hover i{
     color: #1E3050;
@@ -504,6 +392,7 @@ footer,section:not(#banner) {
 /*=========================
     SERVICES STYLE END 
 ==========================*/
+
 
 
 /*=========================
@@ -607,14 +496,10 @@ footer,section:not(#banner) {
     border-radius: 6px;
     display: flex;
     gap: 24px;
-    overflow-x: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none;
     scroll-behavior: smooth;
 }
-.testimonial__body::-webkit-scrollbar {
-    /* display: none; */
-}
-
-
 .testimonial__card {
     padding: 25px;
     background-color: rgb(248 250 252);
@@ -624,6 +509,7 @@ footer,section:not(#banner) {
     flex-shrink: 0;
     user-select: none;
     height:fit-content;
+    cursor: pointer;
     flex-grow: 1;
     -moz-user-select: none;
 }
@@ -726,9 +612,6 @@ footer,section:not(#banner) {
     content: "#";
     color: black;
 }
-/* .blog__tag {
-    color: #FC4EB7;
-} */
 .blog .blog__title {
     font-size: 20px;
     font-weight: 600;
@@ -810,27 +693,14 @@ footer,section:not(#banner) {
 .blog__meta i {
     font-size: 14px;
 }
-.blog__modal_content::-webkit-scrollbar {
-    width: 2px;
-}
-.blog__modal_content::-webkit-scrollbar-track {
-    background: white
-}
-.blog__modal_content::-webkit-scrollbar-thumb {
-    background: #F1F1F1;
-}
 .blog__modal_btn i {
     font-size: 20px;
     color: var(--color-gray-100);
-    transition: all 0.03 ease;
+    transition: all 0.03s ease;
 }
 .blog__modal_btn:hover i{
     color: #1E3050;
 }
-
-
-
-
 /*=========================
     BLOG STYLE START 
 ==========================*/
@@ -941,17 +811,6 @@ footer,section:not(#banner) {
     FOOTER STYLE END 
 ==========================*/
 
-
-body {
-   /*  opacity: 1; 
-    background-color: rgb(13, 18, 36);
-    color: rgb(211, 216, 232);
-    
-    --tw-bg-opacity: 1;
-    background-color: rgb(13 18 36/var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(211 216 232/var(--tw-text-opacity)); */
-}
 
 
 

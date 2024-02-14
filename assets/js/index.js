@@ -1,35 +1,8 @@
-/* nav toggle button select*/
-/* const header = document.getElementById('header') */
-/* const toggleOpen = document.querySelector('#toggle__open');
-const toggleClose = document.querySelector('#toggle__close'); */
-/* const navRight = document.querySelector('.nav__menu') */
-/* const navLogo = document.querySelector('.nav__logo') */
-/* const navMenu = document.querySelector('.nav__menu') */
-/* const moon = document.querySelector('.moon');
-const sun = document.querySelector('.sun'); */
-/* const html = document.querySelector('html') */
-/* const themeToggle = document.getElementById('theme__toggle');
-const headerTitle = document.querySelectorAll('.header__title') */
-/* const isTheme = localStorage.getItem('theme');
-const hero = document.getElementById('hero'); */
-/* const servicesCard = document.querySelectorAll('.services__card'); */
-/* const priceCard = document.querySelectorAll('.price__card');
-const blogCard = document.querySelectorAll('.blog__card'); */
-/* const contactLeft = document.querySelector('.contact__left');
-const contactRight = document.querySelector('.contact__right'); */
-/* const messageInput = document.querySelectorAll('.contact__form input, textarea') */
-/* const servicesCardSVG = document.querySelectorAll('.services__card svg'); */
-const portfolioWrappper = document.querySelector('.portfolio__wrappper')
-/* const testimonialCardSVG = document.querySelectorAll('.testimonial__card svg'); */
-/* const svg = document.querySelectorAll('svg:not(.card__rating svg)'); */
-const preloader = document.getElementById('preloader');
-
-
 
 // Preloader
-/* window.addEventListener('load', () => {
-    preloader.style.display = "none"
-}) */
+window.addEventListener('load', () => {
+    document.getElementById('preloader').style.display = "none"
+})
 
 
 /*=========================
@@ -61,19 +34,10 @@ window.addEventListener('scroll', () => {
     }
 })
 
-
-
-// Navbar active class
-/* const navLink = document.querySelectorAll('.nav-link');
-navLink.forEach((link) => {
-    link.addEventListener('click', () => {
-        document.querySelector('.nav-active').classList.remove('nav-active')
-        link.classList?.add('nav-active')
-    })
-}) */
 /*=========================
     NAVBAR END
 ==========================*/
+
 
 /*=========================
     Portfolio Start
@@ -81,6 +45,7 @@ navLink.forEach((link) => {
 const portfolioMenu = document.querySelector('.portfolio__menu');
 const portfolioCards = document.querySelectorAll('.portfolio__content .col');
 const arrowIcons = document.querySelectorAll('.portfolio__wrappper img');
+const portfolioWrappper = document.querySelector('.portfolio__wrappper')
 
 // Portfolio Menu Dragging
 portfolioMenu.addEventListener('mousedown', () => isdragging = true)
@@ -103,10 +68,11 @@ portfolioMenu.addEventListener('scroll', slideShow)
 // Clicking Target Elements
 portfolioMenu.addEventListener('click', (e) => {
     if (e.target.matches('li')) {
-        const menuId = e.target.id;
+        const menuId = e.target.dataset.name;
         console.log(menuId)
         portfolioCards.forEach((card) => {
-            if (menuId != card.id && menuId != "all-categories") {
+            console.dir(card.dataset.name)
+            if (menuId != card.dataset.name && menuId != "all-categories") {
                 card.style.display = "none"
             } else {
                 document.querySelector('.portfolio__menu .active').classList.remove('active');
@@ -116,20 +82,9 @@ portfolioMenu.addEventListener('click', (e) => {
         })
     }
 })
-
-/* arrowIcons.forEach((arrow) => {
-    arrow.addEventListener('click', (e) => {
-        portfolioMenu.style.scrollBehavior = "smooth"
-        const id = e.target.id;
-        portfolioMenu.scrollLeft -= id == "left" ? -50 : 50;
-        portfolioMenu.style.scrollBehavior = "unset"
-    })
-}) */
 /*=========================
     Portfolio End
 ==========================*/
-
-
 
 
 /*=========================
@@ -172,8 +127,9 @@ rightRrrow.addEventListener('click', () => {
 ========================== */
 
 
-
-/* Blog Start */
+/*=========================
+    Blog Start Start
+========================== */
 const allCrad = document.querySelectorAll('.blog .col');
 const blogModal = document.querySelector('.blog__modal');
 const modalButton = document.querySelector('.blog__modal_btn');
@@ -199,12 +155,14 @@ allCrad.forEach((card) => {
 modalButton.addEventListener('click', () => {
     blogModal.style.visibility = "hidden"
 })
-/* Blog End */
+/*=========================
+    Blog Start End
+========================== */
 
 
-
-
-/* Services Start */
+/*=========================
+    Services Start
+========================== */
 const servicesModal = document.querySelector('.services__modal')
 const allServicesCard = document.querySelectorAll('.services__card');
 const servicesModalBtn = document.querySelector('.services__modal_btn');
@@ -224,9 +182,9 @@ allServicesCard.forEach((card) => {
 servicesModalBtn.addEventListener('click', () => {
     servicesModal.style.visibility = "hidden"
 })
-/* Services End */
-
-
+/*=========================
+    Services End
+========================== */
 
 
 
